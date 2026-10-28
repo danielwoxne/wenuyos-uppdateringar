@@ -1,0 +1,40 @@
+name: Släpp
+# Claude skjuter en gren "slapp-<tagg>" med mappen slapp/: info.txt (rad 1 = tagg, rad 2 = rubrik, resten = text)
+# och filerna, stora i delar "<namn>.del00", "<namn>.del01" … Arbetsflödet sätter ihop delarna,
+# gör (eller fyller på) en release med filerna och tar bort grenen, så att förrådet inte växer.
+on:
+  push:
+    branches: ['slapp-*']
+permissions:
+  contents: write
+jobs:
+  slapp:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Sätt ihop delarna
+        run: |
+          cd slapp
+          for f in *.del00; do
+            [ -e "$f" ] || continue
+            n="${f%.del00}"
+            cat "$n".del[0-9][0-9] > "$n"
+            rm "$n".del[0-9][0-9]
+          done
+          ls -la
+          sha256sum $(ls | grep -v '^info.txt$')
+      - name: Gör releasen
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          cd slapp
+          TAG=$(sed -n 1p info.txt); RUBRIK=$(sed -n 2p info.txt); sed -n '3,$p' info.txt > /tmp/text.md
+          FILER=$(ls | grep -v '^info.txt$')
+          if gh release view "$TAG" >/dev/null 2>&1; then
+            gh release upload "$TAG" $FILER --clobber
+          else
+            gh release create "$TAG" --target main --title "$RUBRIK" --notes-file /tmp/text.md $FILER
+          fi
+      - name: Ta bort grenen
+        if: success()
+        run: git push origin --delete "${GITHUB_REF_NAME}"
