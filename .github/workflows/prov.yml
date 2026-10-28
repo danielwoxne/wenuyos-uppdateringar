@@ -1,7 +1,0 @@
-name: prov
-on: workflow_dispatch
-jobs:
-  prov:
-    runs-on: ubuntu-latest
-    steps:
-      - run: echo ok
