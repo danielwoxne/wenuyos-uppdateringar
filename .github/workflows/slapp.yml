@@ -1,5 +1,5 @@
 name: Släpp
-# Claude skjuter en gren "slapp-<tagg>" med mappen slapp/: info.txt (rad 1 = tagg, rad 2 = rubrik, resten = text)
+# Claude skjuter en gren "slapp-<tagg>" (utgår från main, så att arbetsflödet finns med) med mappen slapp/: info.txt (rad 1 = tagg, rad 2 = rubrik, resten = text)
 # och filerna, stora i delar "<namn>.del00", "<namn>.del01" … Arbetsflödet sätter ihop delarna,
 # gör (eller fyller på) en release med filerna och tar bort grenen, så att förrådet inte växer.
 on:
@@ -35,6 +35,9 @@ jobs:
           else
             gh release create "$TAG" --target main --title "$RUBRIK" --notes-file /tmp/text.md $FILER
           fi
-      - name: Ta bort grenen
-        if: success()
-        run: git push origin --delete "${GITHUB_REF_NAME}"
+      - name: Ta bort grenen (och gamla släppgrenar)
+        if: always()
+        run: |
+          for b in $(git ls-remote --heads origin 'slapp-*' | sed 's#.*refs/heads/##'); do
+            git push origin --delete "$b" || true
+          done
