@@ -1,13 +1,13 @@
 # WenuyOS uppdateringskanal – läses av WenuyOS (wb/natupd.c). Skrivs av tools/publicera-github.sh, ändra inte för hand.
-version=1.049.6
-fil=WenuyOS-1.049.6-64bit.uppdatering
-storlek=38022626
-sha256=5cea137280d109daeba05b0f5b3d53c834a59802c2dd00085fbb728cd9b93259
+version=1.049.7
+fil=WenuyOS-1.049.7-64bit.uppdatering
+storlek=38071175
+sha256=f1c1cfdbdf13ee3ad851d6b5bbeb19e5e3df3d9b0433ac0bdb716bc905ddf212
 datum=2026-10-29
-nytt=Linux-program och spel kan köras i helskärm: installera tillägget Linux-körmiljö (SDL3, SDL2 och OpenGL) under Tillägg och uppdateringar → Hämta och prova Linux-prov i Systemmenyn → Tillägg. Spel i Kodverkstad blinkar inte längre.
-filer=https://github.com/danielwoxne/wenuyos-uppdateringar/releases/download/1.049.6/
+nytt=Spelprov: hämta testversioner av spel från GitHub och skicka förslag efteråt. Linux-körmiljö 2 med X11-spel. Wi-Fi kommer tillbaka snabbare, datorn stängs alltid av ordentligt, fönster hamnar aldrig utanför skärmen, skärmbild kan skickas med felrapporten och textfälten går att redigera.
+filer=https://github.com/danielwoxne/wenuyos-uppdateringar/releases/download/1.049.7/
+tillagg=WenuyAI|2.0-1.049.7|WenuyAI-2.0-1.049.7.tillagg|2194968|822ddcdb7dc0a593313d7d06f97f6394ff0756acdc3d47ad1ba5950c10bd2410|https://github.com/danielwoxne/wenuyos-uppdateringar/releases/download/1.049.7/WenuyAI-2.0-1.049.7.tillagg|Wenuy AI: en egen, snabb AI för WenuyOS som svarar, visar med pilen, felsöker och programmerar – utan internet. Med robotröst.
 tillagg=Linux|2|Linux-2.tillagg|58887040|0012fbc242a1353cd9c007be78a843217ec405b146073d10bf52c26e06184a16|https://github.com/danielwoxne/wenuyos-uppdateringar/releases/download/linux-2/Linux-2.tillagg|Kör vanliga Linux-spel och -program (SDL3, SDL2, OpenGL och X11, t.ex. Godot och Unity) på WenuyOS: glibc, SDL3 med SDL_image/SDL_ttf/SDL_mixer, en egen X-server i helskärm för X11-program, Mesa-d
-tillagg=WenuyAI|2.0-1.049.6|WenuyAI-2.0-1.049.6.tillagg|2196896|4b963d0a621cbb07c0eb4f83334fae4bee1d1138a666b768565245c8aaf2666e|https://github.com/danielwoxne/wenuyos-uppdateringar/releases/download/1.049.6/WenuyAI-2.0-1.049.6.tillagg|Wenuy AI: en egen, snabb AI för WenuyOS som svarar, visar med pilen, felsöker och programmerar – utan internet. Med robotröst.
 tillagg=SDK|1.049.1|SDK-1.049.1.tillagg|158848|e0441d8b3bb3aeb614a17d7a1ff3fc83fe0091a178e992e0fef40e06bc64f8b7|https://github.com/danielwoxne/wenuyos-uppdateringar/releases/download/1.049.1/SDK-1.049.1.tillagg|För den som gör program: handböcker, API-referens (API-nivå 8   /* 8 (1.049): port() – programmens portar; 7 (1.047): typsnitt, stycke, emoji, textruta, listruta, meny, dialoger, tema, dokument 
 tillagg=Assistent|1.1|Assistent-1.1.tillagg|12760632|895088c8661a41322cee24b9a3fe0e0d3ad33bb229b4af0a8086b88148c91b46|https://github.com/danielwoxne/wenuyos-uppdateringar/releases/download/1.049.1/Assistent-1.1.tillagg|Språkmodellen som Wenuy AI använder för svåra frågor, program och rapporter. Den körs på datorn; inget skickas iväg.
 tillagg=Röster|1.0|Roster-1.0.tillagg|182043256|361ae36526913987af11741a8470aa73d4b993e34ca19fd28c993831087062f9|https://github.com/danielwoxne/wenuyos-uppdateringar/releases/download/1.049/Roster-1.0.tillagg|Naturliga datorröster för uppläsning i hela WenuyOS (svenska, spanska och engelska). Utan tillägget läser eSpeak NG upp. Kräver WenuyOS 1.046 och helst minst 2 GB minne.
