@@ -1,12 +1,12 @@
 # WenuyOS uppdateringskanal – läses av WenuyOS (wb/natupd.c). Skrivs av tools/publicera-github.sh, ändra inte för hand.
-version=1.049.9
-fil=WenuyOS-1.049.9-64bit.uppdatering
-storlek=38208004
-sha256=7369ecc82a53fa0f63665f200c46932868679bf2d608d9cd90100c26982496e7
-datum=2026-10-30
-nytt=Skrivbordet fryser inte längre när spel installeras – installationen sker i bakgrunden, visar förloppet och går att avbryta
-filer=https://github.com/danielwoxne/wenuyos-uppdateringar/releases/download/1.049.9/
-tillagg=WenuyAI|2.0-1.049.9|WenuyAI-2.0-1.049.9.tillagg|2195956|54316946192030c49681eb61eab2e805afa2b8677186dbf9d7c7ef5ab91ae6ca|https://github.com/danielwoxne/wenuyos-uppdateringar/releases/download/1.049.9/WenuyAI-2.0-1.049.9.tillagg|Wenuy AI: en egen, snabb AI för WenuyOS som svarar, visar med pilen, felsöker och programmerar – utan internet. Med robotröst.
+version=1.050
+fil=WenuyOS-1.050-64bit.uppdatering
+storlek=38261076
+sha256=ff9b7f5ae96043b086881adbd194854ea093884548aa37bb0facecc2570207ee
+datum=2026-10-31
+nytt=Svarar ett program inte frågar WenuyOS Vänta eller Stäng, A/B-uppdateringar med testversioner, Vulkan, rättade minnesfel och frysningar, Nattljus, fönsterminne, kortkommandon, senaste filer och Integritet
+filer=https://github.com/danielwoxne/wenuyos-uppdateringar/releases/download/1.050/
+tillagg=WenuyAI|2.0-1.050|WenuyAI-2.0-1.050.tillagg|2206268|0be1ed86160474ceda371948fd897430ed070d9535e2aeb42688c777bde4bdeb|https://github.com/danielwoxne/wenuyos-uppdateringar/releases/download/1.050/WenuyAI-2.0-1.050.tillagg|Wenuy AI: en egen, snabb AI för WenuyOS som svarar, visar med pilen, felsöker och programmerar – utan internet. Med robotröst.
 tillagg=Linux|2|Linux-2.tillagg|58887040|0012fbc242a1353cd9c007be78a843217ec405b146073d10bf52c26e06184a16|https://github.com/danielwoxne/wenuyos-uppdateringar/releases/download/linux-2/Linux-2.tillagg|Kör vanliga Linux-spel och -program (SDL3, SDL2, OpenGL och X11, t.ex. Godot och Unity) på WenuyOS: glibc, SDL3 med SDL_image/SDL_ttf/SDL_mixer, en egen X-server i helskärm för X11-program, Mesa-d
 tillagg=SDK|1.049.1|SDK-1.049.1.tillagg|158848|e0441d8b3bb3aeb614a17d7a1ff3fc83fe0091a178e992e0fef40e06bc64f8b7|https://github.com/danielwoxne/wenuyos-uppdateringar/releases/download/1.049.1/SDK-1.049.1.tillagg|För den som gör program: handböcker, API-referens (API-nivå 8   /* 8 (1.049): port() – programmens portar; 7 (1.047): typsnitt, stycke, emoji, textruta, listruta, meny, dialoger, tema, dokument 
 tillagg=Assistent|1.1|Assistent-1.1.tillagg|12760632|895088c8661a41322cee24b9a3fe0e0d3ad33bb229b4af0a8086b88148c91b46|https://github.com/danielwoxne/wenuyos-uppdateringar/releases/download/1.049.1/Assistent-1.1.tillagg|Språkmodellen som Wenuy AI använder för svåra frågor, program och rapporter. Den körs på datorn; inget skickas iväg.
