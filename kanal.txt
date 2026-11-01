@@ -1,15 +1,15 @@
 # WenuyOS uppdateringskanal – läses av WenuyOS (wb/natupd.c). Skrivs av tools/publicera-github.sh, ändra inte för hand.
-version=1.054
-fil=WenuyOS-1.054-64bit.uppdatering
-storlek=38633619
-sha256=54a4ecda6a47b3b90e4e029a9fc57fb8e708ef990ac560cf652af1f5475ab398
+version=1.055
+fil=WenuyOS-1.055-64bit.uppdatering
+storlek=40848940
+sha256=7035578f5423641d29633e2e2cdadece2f25afa7039adeaa9f0ee53662aeb07a
 datum=2026-11-01
-nytt=Radens genomskinlighet fungerar igen, och Palett med 2080 färger
-filer=https://github.com/danielwoxne/wenuyos-uppdateringar/releases/download/1.054/
-tillagg=WenuyAI|2.0-1.054|WenuyAI-2.0-1.054.tillagg|2220896|9a6a74877c1c707c6b9aab620cdaf65d4e7824b89aa05e944b8f03996917e66a|https://github.com/danielwoxne/wenuyos-uppdateringar/releases/download/1.054/WenuyAI-2.0-1.054.tillagg|Wenuy AI: en egen, snabb AI för WenuyOS som svarar, visar med pilen, felsöker och programmerar – utan internet. Med robotröst.
-tillagg=SDK|1.054|SDK-1.054.tillagg|160276|a05edb2109f557436ecdf92fb5a60a87d9740ad65b261a1dda5195e5056c3bba|https://github.com/danielwoxne/wenuyos-uppdateringar/releases/download/1.054/SDK-1.054.tillagg|För den som gör program: handböcker, API-referens (API-nivå 8   /* 8 (1.049): port() – programmens portar; 7 (1.047): typsnitt, stycke, emoji, textruta, listruta, meny, dialoger, tema, dokument 
-tillagg=Språk-engelska|1.054|Sprak-engelska-1.054.tillagg|68956|5970387467b7248d805e29188a7e94057999858219bb851aefbba21a348b3748|https://github.com/danielwoxne/wenuyos-uppdateringar/releases/download/1.054/Sprak-engelska-1.054.tillagg|English for WenuyOS: menus, windows, dialogs and settings in English (draft). Wenuy AI still only understands Swedish.
-tillagg=Språk-spanska-Chile|1.054|Sprak-spanska-Chile-1.054.tillagg|70952|0cf2ca22d8eb12584d99d048fd0abd83962bd6a58050f22612eaf03d4157fb2e|https://github.com/danielwoxne/wenuyos-uppdateringar/releases/download/1.054/Sprak-spanska-Chile-1.054.tillagg|Español (Chile) para WenuyOS: menús, ventanas, diálogos y configuración en español (borrador). Wenuy AI todavía solo entiende sueco.
+nytt=Pekaren hänger med när program ritar mycket. Sökfältet tål stavfel och hittar alla program, även installerade .wapp. Program kan ändra fönsterstorlek och få bättre grafik och färdiga kontroller (SDK API-nivå 9).
+filer=https://github.com/danielwoxne/wenuyos-uppdateringar/releases/download/1.055/
+tillagg=WenuyAI|2.0-1.055|WenuyAI-2.0-1.055.tillagg|2242048|7e01c9b47c3d27b84c0e12f215af08bc4b905c57a4e1fd5e15aa3a797552c691|https://github.com/danielwoxne/wenuyos-uppdateringar/releases/download/1.055/WenuyAI-2.0-1.055.tillagg|Wenuy AI: en egen, snabb AI för WenuyOS som svarar, visar med pilen, felsöker och programmerar – utan internet. Med robotröst.
+tillagg=SDK|1.055|SDK-1.055.tillagg|189356|8b9e7ba226aaf686d36c10daac081ecd7dd8932ed02a1da35d3390559732cda8|https://github.com/danielwoxne/wenuyos-uppdateringar/releases/download/1.055/SDK-1.055.tillagg|För den som gör program: handböcker, API-referens (API-nivå 9   /* 9 (1.055): ändra fönsterstorlek (fonster_storlek), lager, banor, toning, skuggor; 8 (1.049): port() – programmens portar; 7 (
+tillagg=Språk-engelska|1.055|Sprak-engelska-1.055.tillagg|70224|a7bc6a9de681f1ca402425729b676805b6f44e5b863d5608159089b9e98e0bab|https://github.com/danielwoxne/wenuyos-uppdateringar/releases/download/1.055/Sprak-engelska-1.055.tillagg|English for WenuyOS: menus, windows, dialogs and settings in English (draft). Wenuy AI still only understands Swedish.
+tillagg=Språk-spanska-Chile|1.055|Sprak-spanska-Chile-1.055.tillagg|72180|28a8d7f041099659caa2551cc8ecbf816636b97b724eb2d439b2623428d71b3e|https://github.com/danielwoxne/wenuyos-uppdateringar/releases/download/1.055/Sprak-spanska-Chile-1.055.tillagg|Español (Chile) para WenuyOS: menús, ventanas, diálogos y configuración en español (borrador). Wenuy AI todavía solo entiende sueco.
 tillagg=Linux|2|Linux-2.tillagg|58887040|0012fbc242a1353cd9c007be78a843217ec405b146073d10bf52c26e06184a16|https://github.com/danielwoxne/wenuyos-uppdateringar/releases/download/linux-2/Linux-2.tillagg|Kör vanliga Linux-spel och -program (SDL3, SDL2, OpenGL och X11, t.ex. Godot och Unity) på WenuyOS: glibc, SDL3 med SDL_image/SDL_ttf/SDL_mixer, en egen X-server i helskärm för X11-program, Mesa-d
 tillagg=Assistent|1.1|Assistent-1.1.tillagg|12760632|895088c8661a41322cee24b9a3fe0e0d3ad33bb229b4af0a8086b88148c91b46|https://github.com/danielwoxne/wenuyos-uppdateringar/releases/download/1.049.1/Assistent-1.1.tillagg|Språkmodellen som Wenuy AI använder för svåra frågor, program och rapporter. Den körs på datorn; inget skickas iväg.
 tillagg=Röster|1.0|Roster-1.0.tillagg|182043256|361ae36526913987af11741a8470aa73d4b993e34ca19fd28c993831087062f9|https://github.com/danielwoxne/wenuyos-uppdateringar/releases/download/1.049/Roster-1.0.tillagg|Naturliga datorröster för uppläsning i hela WenuyOS (svenska, spanska och engelska). Utan tillägget läser eSpeak NG upp. Kräver WenuyOS 1.046 och helst minst 2 GB minne.
