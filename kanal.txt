@@ -1,18 +1,11 @@
 # WenuyOS uppdateringskanal – läses av WenuyOS (wb/natupd.c). Skrivs av tools/publicera-github.sh, ändra inte för hand.
-version=1.055.1
-fil=WenuyOS-1.055.1-64bit.uppdatering
-storlek=40843075
-sha256=404fa91f027d9e3bc704b4ebe1460a2ae9d55cc8b9cbc3a4be9e2accd872dff8
-datum=2026-11-01
-nytt=Säkerhet: program från Kodverkstad följer inga symboliska länkar ut ur dina mappar. Programfönster som ändrar storlek får rätt höjd.
-filer=https://github.com/danielwoxne/wenuyos-uppdateringar/releases/download/1.055.1/
-test_version=1.059
-test_fil=WenuyOS-1.059-64bit.uppdatering
-test_storlek=59423279
-test_sha256=1d745f3cb7f935c038f014a7fd542090ebb8cfcc826e202a83f42deac7aaa2c5
-test_datum=2026-11-02
-test_nytt=AI Studio tappar inga knappar i små fönster och förklarar tydligare varför ett bygge inte går. / Sökrutan hittar nu AI Studio och Android-appar. / Engelska och spanska texter för AI Studio är granskade. / Windows-tangenten öppnar alltid sök- och kommandofältet.
-test_filer=https://github.com/danielwoxne/wenuyos-uppdateringar/releases/download/1.059/
+version=1.059
+fil=WenuyOS-1.059-64bit.uppdatering
+storlek=59423279
+sha256=1d745f3cb7f935c038f014a7fd542090ebb8cfcc826e202a83f42deac7aaa2c5
+datum=2026-11-02
+nytt=AI Studio tappar inga knappar i små fönster och förklarar tydligare varför ett bygge inte går. / Sökrutan hittar nu AI Studio och Android-appar. / Engelska och spanska texter för AI Studio är granskade. / Windows-tangenten öppnar alltid sök- och kommandofältet.
+filer=https://github.com/danielwoxne/wenuyos-uppdateringar/releases/download/1.059/
 tillagg=SDK|1.059|SDK-1.059.tillagg|190752|3504963f6ca6ed4d578445865d7ec164ca574831418205a848225f9439041fba|https://github.com/danielwoxne/wenuyos-uppdateringar/releases/download/1.059/SDK-1.059.tillagg|För den som gör program: handböcker, API-referens (API-nivå 9   /* 9 (1.055): ändra fönsterstorlek (fonster_storlek), lager, banor, toning, skuggor; 8 (1.049): port() – programmens portar; 7 (
 tillagg=Språk-engelska|1.059|Sprak-engelska-1.059.tillagg|94368|fc6938e6bddd990d0410e2bbc46621013f35db1778d5dbeeed82a1da6b095733|https://github.com/danielwoxne/wenuyos-uppdateringar/releases/download/1.059/Sprak-engelska-1.059.tillagg|English for WenuyOS: menus, windows, dialogs and settings in English (draft). Wenuy AI still only understands Swedish.
 tillagg=Språk-spanska-Chile|1.059|Sprak-spanska-Chile-1.059.tillagg|97052|a1b00c957f174065cca90fac256f8c48c0d7c3ca66744df0eed8b8ed6de40b98|https://github.com/danielwoxne/wenuyos-uppdateringar/releases/download/1.059/Sprak-spanska-Chile-1.059.tillagg|Español (Chile) para WenuyOS: menús, ventanas, diálogos y configuración en español (borrador). Wenuy AI todavía solo entiende sueco.
