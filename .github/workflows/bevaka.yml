@@ -1,0 +1,38 @@
+name: Bevaka Ubuntu
+# Varje dag: har Ubuntu släppt nyare versioner av paket som WenuyOS byggt om (NetworkManager, PipeWire,
+# WirePlumber, Mesa, libdrm …)? Då öppnas ett ärende "Ombygge behövs" – ombygget och signeringen görs utanför
+# GitHub (sudo packaging/rebuild.sh), eftersom WenuyOS-nyckeln aldrig ligger här. Ärendet stängs när allt är aktuellt.
+on:
+  schedule:
+    - cron: '17 5 * * *'
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths: ['packaging/**', '.github/workflows/bevaka.yml']
+permissions:
+  contents: read
+  issues: write
+jobs:
+  bevaka:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Jämför med Ubuntu
+        id: check
+        run: |
+          set +e
+          python3 packaging/check-ubuntu.py --published
+          python3 packaging/check-ubuntu.py --published --markdown > rapport.md
+          echo "rc=$?" >> "$GITHUB_OUTPUT"
+      - name: Ärende
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          title="Ombygge behövs: Ubuntu har nyare paket"
+          open=$(gh issue list --state open --search "in:title \"$title\"" --json number --jq '.[0].number')
+          if [ "${{ steps.check.outputs.rc }}" = 1 ]; then
+            if [ -n "$open" ]; then gh issue edit "$open" --body-file rapport.md
+            else gh issue create --title "$title" --body-file rapport.md; fi
+          elif [ -n "$open" ]; then
+            gh issue close "$open" --comment "Allt är aktuellt igen ($(date -u +%Y-%m-%d))."
+          fi
