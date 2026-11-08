@@ -1,0 +1,36 @@
+name: Säkerhet
+# Säkerhetsroboten (SECURITY.md i WenuyOS): varje dag jämförs paketen i senaste WenuyOS-ISO:n med Debians
+# säkerhetsspårare och Firefox med Mozillas senaste version. Finns rättningar som ISO:n saknar öppnas (eller
+# uppdateras) ärendet "Säkerhet: ISO:n behöver byggas om"; det stängs när allt är aktuellt igen.
+# Bara offentliga data – ingen nyckel, inget token utöver GitHubs eget för ärendet.
+on:
+  schedule:
+    - cron: '41 4 * * *'
+  workflow_dispatch:
+permissions:
+  contents: read
+  issues: write
+jobs:
+  kontroll:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Jämför med Debian och Mozilla
+        id: check
+        run: |
+          set +e
+          python3 packaging/check-security.py --markdown > rapport.md
+          echo "rc=$?" >> "$GITHUB_OUTPUT"
+          cat rapport.md
+      - name: Ärende
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          title="Säkerhet: ISO:n behöver byggas om"
+          open=$(gh issue list --state open --search "in:title \"$title\"" --json number --jq '.[0].number')
+          if [ "${{ steps.check.outputs.rc }}" = 1 ]; then
+            if [ -n "$open" ]; then gh issue edit "$open" --body-file rapport.md
+            else gh issue create --title "$title" --body-file rapport.md; fi
+          elif [ -n "$open" ]; then
+            gh issue close "$open" --comment "Allt är aktuellt igen ($(date -u +%Y-%m-%d))."
+          fi
