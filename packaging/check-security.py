@@ -82,13 +82,19 @@ def fetch(url):
         return json.load(r)
 
 
+STATS = {"packages": 0, "cves": 0}
+
+
 def check(tracker, src):
     fixable, open_serious = [], []
     for name, (ver, bins) in src.items():
+        if name in tracker:
+            STATS["packages"] += 1
         for cve, info in tracker.get(name, {}).items():
             rel = info.get("releases", {}).get(RELEASE)
             if not rel:
                 continue
+            STATS["cves"] += 1
             urg = rel.get("urgency", "")
             if rel.get("status") == "resolved":
                 fixed = rel.get("fixed_version", "")
@@ -137,7 +143,9 @@ def main():
             print(f"Information: {len(open_serious)} allvarliga sårbarheter i trixie väntar på rättning från Debian "
                   f"({', '.join(sorted({x['source'] for x in open_serious})[:10])}).\n")
         if not act:
-            print("Inget att göra – ISO:n har alla rättningar som finns.")
+            print("Inget att göra – ISO:n har alla rättningar som finns.\n")
+        print(f"Kontrollerat: {len(src)} källpaket, {STATS['packages']} av dem finns i spåraren, "
+              f"{STATS['cves']} kända sårbarheter för {RELEASE}; Firefox i ISO:n {ff or '?'}, senaste {latest_ff or '?'}.")
     else:
         print(f"Rättade i nyare version än ISO:n: {len(fixable)} ({len(serious)} allvarliga) i {len(pkgs)} paket")
         for p in pkgs[:30]:
