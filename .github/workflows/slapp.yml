@@ -45,6 +45,12 @@ jobs:
           else
             gh release create "$TAG" --target main --title "$RUBRIK" --notes-file /tmp/text.md $FILER
           fi
+          # SDK-arkivet (taggen sdk, för wenuyos ci) är ingen WenuyOS-version: förhandsutgåva, aldrig "senaste"
+          if [ "$TAG" = sdk ]; then
+            gh release edit sdk --prerelease --latest=false
+            v=$(gh release list --limit 30 --json tagName,isPrerelease --jq '[.[] | select(.tagName | startswith("v")) | select(.isPrerelease | not)][0].tagName')
+            [ -n "$v" ] && gh release edit "$v" --latest
+          fi
       - name: Ta bort grenen (och gamla släppgrenar)
         if: always()
         run: |
