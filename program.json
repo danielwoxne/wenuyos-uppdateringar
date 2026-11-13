@@ -1,0 +1,34 @@
+{
+ "format": 1,
+ "programs": [
+  {
+   "id": "se.wenuyos.app.schack",
+   "name": "Wenuy Chess",
+   "name_sv": "Wenuy Schack",
+   "kind": "game",
+   "cat": "strategy",
+   "summary": "Play chess at five computer difficulty levels, practise with 31 interactive lessons, or play with a friend on a trusted LAN.",
+   "summary_sv": "Spela schack på fem datornivåer, träna med 31 interaktiva övningar eller spela mot en vän på ett betrott lokalt nätverk.",
+   "source": "github.com/danielwoxne/wenuyos-program#schack",
+   "added": "2026-11-11",
+   "low": true,
+   "size_mb": 2,
+   "icon": "se.wenuyos.app.schack"
+  },
+  {
+   "id": "se.wenuyos.app.musikstudio",
+   "name": "Wenuy Studio",
+   "name_sv": "Wenuy Musikstudio",
+   "kind": "app",
+   "cat": "audio",
+   "summary": "Create and arrange music with MIDI, audio tracks, instruments, effects and recording. Experimental WenuyOS version.",
+   "summary_sv": "Skapa och arrangera musik med MIDI, ljudspår, instrument, effekter och inspelning. Experimentell WenuyOS-version.",
+   "source": "github.com/danielwoxne/wenuyos-program#musikstudio",
+   "added": "2026-11-12",
+   "low": "maybe",
+   "size_mb": 1,
+   "icon": "se.wenuyos.app.musikstudio"
+  }
+ ],
+ "updated": "2026-11-13T19:28:02Z"
+}
